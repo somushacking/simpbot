@@ -176,14 +176,14 @@ export class PlayCommand extends BaseCommand {
             }
             message.guild.queue.songs.addSong(song);
             if (!playlist) {
-                message.channel.send(createEmbed("info", `✅ **|** Track **[${song.title}](${song.url})** has been added to the queue.`).setThumbnail(song.thumbnail))
+                message.channel.send(createEmbed("info", `Se ha puesto **[${song.title}](${song.url})** en la playlist.`).setThumbnail(song.thumbnail))
                     .catch(e => this.client.logger.error("PLAY_CMD_ERR:", e));
             }
         } else {
             message.guild!.queue = new ServerQueue(message.channel as TextChannel, voiceChannel);
             message.guild?.queue.songs.addSong(song);
             if (!playlist) {
-                message.channel.send(createEmbed("info", `✅ **|** Track **[${song.title}](${song.url})** has been added to the queue.`).setThumbnail(song.thumbnail))
+                message.channel.send(createEmbed("info", `Se ha puesto **[${song.title}](${song.url})** en la playlist.`).setThumbnail(song.thumbnail))
                     .catch(e => this.client.logger.error("PLAY_CMD_ERR:", e));
             }
             try {
